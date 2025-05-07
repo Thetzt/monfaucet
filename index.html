@@ -3,204 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create or login Account</title>
+    <title>My Website with HilltopAds</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f2f5;
+            padding: 0;
+            line-height: 1.6;
         }
-
+        header, footer {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
         .container {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 4px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        button {
-            width: 100%;
+        .ad-container {
+            margin: 20px 0;
             padding: 10px;
-            background-color: #1877f2;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .google-btn {
-            background-color: #ffffff;
-            color: #757575;
             border: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .google-btn img {
-            width: 20px;
-            margin-right: 8px;
-        }
-
-        .divider {
             text-align: center;
-            margin: 1rem 0;
-            color: #65676b;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        #welcomePage {
-            text-align: center;
-        }
-
-        .toggle-form {
-            text-align: center;
-            margin-top: 1rem;
-        }
-
-        a {
-            color: #1877f2;
-            text-decoration: none;
-            cursor: pointer;
+            background: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <!-- Signup Form -->
-    <div class="container" id="signupContainer">
-        <h2>Create Account</h2>
-        <form id="signupForm">
-            <div class="form-group">
-                <input type="email" id="signupEmail" placeholder="Email address" required>
+    <header>
+        <h1>My Website</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Welcome to My Site</h2>
+            <p>This is a sample website demonstrating HilltopAds integration.</p>
+            
+            <!-- HilltopAds Banner Ad (Top) -->
+            <div class="ad-container">
+                <!-- Replace with your HilltopAds HTML code -->
+                <script type="text/javascript" src="https://hilltopads.com/scripts/your-publisher-id.js"></script>
+                <!-- Alternative if you have direct HTML code -->
+                <iframe src="https://hilltopads.com/ad/your-ad-id" width="728" height="90" frameborder="0"></iframe>
             </div>
-            <div class="form-group">
-                <input type="password" id="signupPassword" placeholder="Password" required>
+            
+            <article>
+                <h3>Content Section 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+            </article>
+            
+            <!-- HilltopAds Native Ad (Middle) -->
+            <div class="ad-container">
+                <!-- Replace with your HilltopAds native ad code -->
+                <div id="hilltopads-native-ad" style="width: 300px; margin: 0 auto;">
+                    <script type="text/javascript" src="https://hilltopads.com/scripts/native/your-publisher-id.js"></script>
+                </div>
             </div>
-            <button type="submit">Sign Up</button>
-        </form>
+            
+            <article>
+                <h3>Content Section 2</h3>
+                <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+            </article>
+        </section>
+    </div>
 
-        <div class="divider">or</div>
-
-        <button class="google-btn" onclick="handleGoogleLogin()">
-            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo">
-            Continue with Google
-        </button>
-
-        <div class="toggle-form">
-            Already have an account? <a onclick="showLogin()">Login</a>
+    <footer>
+        <!-- HilltopAds Footer Ad -->
+        <div class="ad-container">
+            <!-- Replace with your HilltopAds footer ad code -->
+            <script type="text/javascript" src="https://hilltopads.com/scripts/footer/your-publisher-id.js"></script>
         </div>
-    </div>
-
-    <!-- Login Form -->
-    <div class="container hidden" id="loginContainer">
-        <h2>Welcome Back</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <input type="email" id="loginEmail" placeholder="Email address" required>
-            </div>
-            <div class="form-group">
-                <input type="password" id="loginPassword" placeholder="Password" required>
-            </div>
-            <button type="submit">Login</button>
-        </form>
-
-        <div class="divider">or</div>
-
-        <button class="google-btn" onclick="handleGoogleLogin()">
-            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google logo">
-            Continue with Google
-        </button>
-
-        <div class="toggle-form">
-            Don't have an account? <a onclick="showSignup()">Create account</a>
-        </div>
-    </div>
-
-    <!-- Welcome Page -->
-    <div class="container hidden" id="welcomePage">
-        <h2>Welcome, <span id="userEmail"></span>!</h2>
-        <p>You have successfully logged in.</p>
-        <button onclick="logout()">Logout</button>
-    </div>
-
-    <script>
-        // Toggle between signup and login forms
-        function showLogin() {
-            document.getElementById('signupContainer').classList.add('hidden');
-            document.getElementById('loginContainer').classList.remove('hidden');
-        }
-
-        function showSignup() {
-            document.getElementById('loginContainer').classList.add('hidden');
-            document.getElementById('signupContainer').classList.remove('hidden');
-        }
-
-        // Handle form submissions
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('signupEmail').value;
-            // In real implementation, you would send this to your backend
-            alert('Signup successful! Please login.');
-            showLogin();
-        });
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            showWelcomePage(email);
-        });
-
-        // Google login handler
-        function handleGoogleLogin() {
-            // Initialize Google auth
-            google.accounts.id.initialize({
-                client_id: 'YOUR_GOOGLE_CLIENT_ID',
-                callback: handleCredentialResponse
-            });
-
-            google.accounts.id.prompt();
-        }
-
-        function handleCredentialResponse(response) {
-            // Verify the credential with your backend
-            console.log('Google auth response:', response);
-            showWelcomePage(response.email);
-        }
-
-        // Show welcome page
-        function showWelcomePage(email) {
-            document.getElementById('userEmail').textContent = email;
-            document.getElementById('signupContainer').classList.add('hidden');
-            document.getElementById('loginContainer').classList.add('hidden');
-            document.getElementById('welcomePage').classList.remove('hidden');
-        }
-
-        // Logout handler
-        function logout() {
-            document.getElementById('welcomePage').classList.add('hidden');
-            document.getElementById('signupContainer').classList.remove('hidden');
-        }
-    </script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
 </body>
 </html>
