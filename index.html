@@ -4,19 +4,21 @@
   <meta charset="UTF-8" />
   <title>Monad Faucet</title>
 
-  <!-- OG + Frame Tags for Warpcast -->
+  <!-- Open Graph (OG) metadata for social and Warpcast -->
   <meta property="og:title" content="Claim Free $MON" />
-  <meta property="og:description" content="Get testnet MON for your Monad dApp." />
+  <meta property="og:description" content="Get testnet $MON tokens for your Monad dApps." />
   <meta property="og:image" content="https://monfaucet.vercel.app/monad-preview.png" />
   <meta property="og:type" content="website" />
 
-  <!-- Warpcast Frame Tags (Static) -->
+  <!-- Warpcast Frame Metadata -->
   <meta property="fc:frame" content="vNext" />
-  <meta property="fc:frame:button:1" content="No Action Available" />
+  <meta property="fc:frame:button:1" content="Claim Faucet" />
+  <!-- The post_url meta defines the API endpoint Warpcast calls when the button is pressed -->
+  <meta property="fc:frame:post_url" content="https://monfaucet.vercel.app/api/claim" />
+
 </head>
 <body>
   <h1>Monad Faucet</h1>
-  <p>This page is designed for use inside Warpcast Frames.</p>
-  <p>Static version: no interactive faucet logic.</p>
+  <p>This app is designed for Warpcast Frames.</p>
 </body>
 </html>
