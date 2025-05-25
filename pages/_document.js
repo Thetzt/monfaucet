@@ -9,7 +9,7 @@ export default function Document() {
         <meta property="og:image" content="/monad-preview.png" />
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:button:1" content="Claim Faucet" />
-        <meta property="fc:frame:post_url" content="/api/claim" />
+        <meta property="fc:frame:post_url" content="https://monfaucet.vercel.app/api/claim" />
       </Head>
       <body>
         <Main />
