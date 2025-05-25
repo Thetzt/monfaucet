@@ -4,7 +4,7 @@ export default function handler(req, res) {
     <html>
       <head>
         <meta property="og:title" content="Claim Success!" />
-        <meta property="og:image" content="/success.png" />
+        <meta property="og:image" content="/monad-preview.png" />
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:button:1" content="Back" />
       </head>
